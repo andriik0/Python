@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" target="_blank" href="{% static 'css/base.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add news</title>
+</head>
+<body>
+{% if newsform %}
+
+<form method="post">
+    {% csrf_token %}
+    <table>{{ newsform.as_table }}</table>
+    <button type="submit">Send</button>
+</form>
+
+{% endif %}
+<a target="_blank" href="/news/">Main page</a>
+</body>
+</html>

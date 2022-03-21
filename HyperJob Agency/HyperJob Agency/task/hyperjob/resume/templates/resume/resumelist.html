@@ -1,0 +1,39 @@
+{% extends "resume/layout.html" %}
+{% block title %}
+Resume page
+{% endblock %}
+
+{% block header %}
+Resume page
+{% endblock %}
+
+{% block content %}
+   {% if resume_list %}
+        {% if view.request.user %}
+            {% if view.request.user.is_authenticated %}
+                <a href="/resume/new">Add new resume</a>
+            {% endif %}
+        {% endif %}
+
+        <table class="resume_list">
+            <thead>
+            <tr>
+                <th>Author</th>
+                <th>resume</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in resume_list %}
+                <tr>
+
+                    <td><div>{{ item.author }}: {{ item.description }}</div></td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No resumes have been logged.</p>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: |-
+    class WaterBody:
+        def __init__(self, name, length,):
+            self.name = name  # str
+            self.length = length  # int
+
+
+    class River{WaterBody}:
+        pass
+
+
+    seine = River()
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/7241#comment
+status: Solved
+feedback:
+  message: <html>Correct solution<br/><br/>Continue on <a href="https://hyperskill.org/learn/step/7241#comment">JetBrains
+    Academy</a></html>
+  time: Tue, 24 Nov 2020 11:19:21 UTC
+record: -1

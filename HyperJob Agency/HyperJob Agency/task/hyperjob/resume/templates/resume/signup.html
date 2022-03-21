@@ -1,0 +1,15 @@
+{% extends "resume/layout.html" %}
+{% block title %}
+Sign up page
+{% endblock %}
+
+{% block header %}
+Sign up page
+{% endblock %}
+
+{% block content %}
+<form method="post" action="signup">{% csrf_token %}
+  <table>{{ form.as_table }}</table>
+  <button type="submit">Sign up</button>
+</form>
+{% endblock %}

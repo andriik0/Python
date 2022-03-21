@@ -1,0 +1,13 @@
+type: code
+files:
+- name: main.py
+  visible: true
+  text: from scipy.sparse import csgraph_from_dense
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/11444#comment
+status: Solved
+feedback:
+  message: <html>Correct solution<br/><br/>Continue on <a href="https://hyperskill.org/learn/step/11444#comment">JetBrains
+    Academy</a></html>
+  time: Tue, 24 Nov 2020 10:07:58 UTC
+record: -1

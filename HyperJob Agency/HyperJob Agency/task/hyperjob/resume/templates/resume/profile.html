@@ -1,0 +1,25 @@
+{% extends "resume/layout.html" %}
+
+{% if user_authentificate %}
+
+{% block title %}
+Profile page
+{% endblock %}
+
+{% block header %}
+Profile page
+{% endblock %}
+
+{% block content %}
+   {% if user_form %}
+<nav><a href="/resume/new">New resume</a> <a href="/vacancy/new">New  vacancy</a> </nav>
+<form method="post">
+  {% csrf_token %}
+  {{ user_form.as_p }}
+
+  <button type="submit">Save changes</button>
+</form>
+
+    {% endif %}
+{% endblock %}
+{% endif %}

@@ -1,0 +1,17 @@
+setup.py
+hypernews/__init__.py
+hypernews/settings.py
+hypernews/urls.py
+hypernews/wsgi.py
+myproject.egg-info/PKG-INFO
+myproject.egg-info/SOURCES.txt
+myproject.egg-info/dependency_links.txt
+myproject.egg-info/top_level.txt
+news/__init__.py
+news/admin.py
+news/apps.py
+news/models.py
+news/tests.py
+news/urls.py
+news/views.py
+news/migrations/__init__.py

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<h2>Welcome to HyperJob!</h2>
+{% block user %}
+    {% if user.is_authenticated %}
+        User: {{ user.username}}
+    {% else %}
+        User has no login
+    {% endif %}
+<br>
+{% endblock %}
+<nav>
+            <div><a href="/login">Login</a></div>
+            <div><a href="/logout">Logout</a></div>
+            <div><a href="/signup">SignUp</a></div>
+            <div><a href="/vacancies">Vacancies</a></div>
+            <div><a href="/resumes">Resumes</a></div>
+            <div><a href="/home">Home</a></div>
+            <div><a href="/profile">Profile</a></div>
+</nav>
+<h2>{% block header %}{% endblock %}</h2>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

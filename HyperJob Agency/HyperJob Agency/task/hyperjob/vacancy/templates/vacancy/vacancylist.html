@@ -1,0 +1,39 @@
+{% extends "resume/layout.html" %}
+{% block title %}
+Vacancy page
+{% endblock %}
+{% block header %}
+Vacancy page
+{% endblock %}
+
+{% block content %}
+
+    {% if vacancy_list %}
+        {% if view.request.user %}
+            {% if view.request.user.is_authenticated %}
+                <a href="/vacancy/new">Add new vacancy</a>
+            {% endif %}
+        {% endif %}
+
+        <table class="vacancy_list">
+            <thead>
+            <tr>
+                <th>Author</th>
+                <th>Vacancy</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for item in vacancy_list %}
+                <tr>
+
+                    <td><div>{{ item.author }}: {{ item.description }}</div></td>
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No vacancies have been logged.</p>
+    {% endif %}
+{% endblock %}

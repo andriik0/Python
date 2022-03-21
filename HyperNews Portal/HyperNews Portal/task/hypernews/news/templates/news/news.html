@@ -1,0 +1,29 @@
+{% load static %}
+<link rel="stylesheet" target="_blank" href="{% static 'css/base.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HyperNews</title>
+</head>
+<body>
+<h2>Hyper news</h2>
+<br/>
+<form method="get" action="{% url 'list-news' %}">
+    <input name="q" type="text" placeholder="Search...">
+</form>
+<br/>
+{% if news_list %}
+{% for item in news_list %}
+<h4>{{ item.shortdate }}</h4>
+
+<ul>
+    {% for news_item in item.news %}
+    <li><a target="_blank" href="/news/{{ news_item.link }}/">{{news_item.title}}</a> </li>
+    {% endfor %}
+</ul>
+{% endfor %}
+{% endif %}
+<a target="_blank" href="/news/create/">Create news</a>
+</body>
+</html>

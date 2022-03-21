@@ -1,0 +1,21 @@
+{% extends "resume/layout.html" %}
+{% block title %}
+New Vacancy page
+{% endblock %}
+
+{% block header %}
+New Vacancy page
+{% endblock %}
+
+{% block content %}
+   {% if user.is_authenticated %}
+        <form action="/vacancy/save" method="post">
+            {% csrf_token %}
+            <input name="author" value="{{ user.username }}" readonly="True">
+            <input name="description">
+            <input type="submit" value="Save">
+        </form>
+    {% else %}
+        <p>User should be login.</p>
+    {% endif %}
+{% endblock %}
